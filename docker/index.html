@@ -1,0 +1,119 @@
+<!DOCTYPE html>
+<html lang="en-US">
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width,initial-scale=1">
+    <title>docker | 实战笔记</title>
+    <meta name="generator" content="VuePress 1.8.0">
+    
+    <meta name="description" content="主要定位是在工作中实际遇到的难题、没有接触过、或稍有难度的真实场景解决记录">
+    
+    <link rel="preload" href="/note-combat/assets/css/0.styles.3c59a9c8.css" as="style"><link rel="preload" href="/note-combat/assets/js/app.b935488c.js" as="script"><link rel="preload" href="/note-combat/assets/js/2.5a1b50d2.js" as="script"><link rel="preload" href="/note-combat/assets/js/9.15d6a915.js" as="script"><link rel="preload" href="/note-combat/assets/js/3.cf5f66e5.js" as="script"><link rel="prefetch" href="/note-combat/assets/js/10.ae2dcb4f.js"><link rel="prefetch" href="/note-combat/assets/js/11.529de61d.js"><link rel="prefetch" href="/note-combat/assets/js/12.097da429.js"><link rel="prefetch" href="/note-combat/assets/js/4.6715e346.js"><link rel="prefetch" href="/note-combat/assets/js/5.9dc543e5.js"><link rel="prefetch" href="/note-combat/assets/js/6.681b9c9a.js"><link rel="prefetch" href="/note-combat/assets/js/7.62e07670.js"><link rel="prefetch" href="/note-combat/assets/js/8.2e83bd93.js">
+    <link rel="stylesheet" href="/note-combat/assets/css/0.styles.3c59a9c8.css">
+  </head>
+  <body>
+    <div id="app" data-server-rendered="true"><div class="theme-container"><header class="navbar"><div class="sidebar-button"><svg xmlns="http://www.w3.org/2000/svg" aria-hidden="true" role="img" viewBox="0 0 448 512" class="icon"><path fill="currentColor" d="M436 124H12c-6.627 0-12-5.373-12-12V80c0-6.627 5.373-12 12-12h424c6.627 0 12 5.373 12 12v32c0 6.627-5.373 12-12 12zm0 160H12c-6.627 0-12-5.373-12-12v-32c0-6.627 5.373-12 12-12h424c6.627 0 12 5.373 12 12v32c0 6.627-5.373 12-12 12zm0 160H12c-6.627 0-12-5.373-12-12v-32c0-6.627 5.373-12 12-12h424c6.627 0 12 5.373 12 12v32c0 6.627-5.373 12-12 12z"></path></svg></div> <a href="/note-combat/" class="home-link router-link-active"><!----> <span class="site-name">实战笔记</span></a> <div class="links"><div class="search-box"><input aria-label="Search" autocomplete="off" spellcheck="false" value=""> <!----></div> <nav class="nav-links can-hide"><div class="nav-item"><a href="/note-combat/spring/" class="nav-link">
+  Spring
+</a></div><div class="nav-item"><a href="/note-combat/docker/" aria-current="page" class="nav-link router-link-exact-active router-link-active">
+  Docker
+</a></div> <a href="https://github.com/zq99299/note-combat" target="_blank" rel="noopener noreferrer" class="repo-link">
+    GitHub
+    <span><svg xmlns="http://www.w3.org/2000/svg" aria-hidden="true" focusable="false" x="0px" y="0px" viewBox="0 0 100 100" width="15" height="15" class="icon outbound"><path fill="currentColor" d="M18.8,85.1h56l0,0c2.2,0,4-1.8,4-4v-32h-8v28h-48v-48h28v-8h-32l0,0c-2.2,0-4,1.8-4,4v56C14.8,83.3,16.6,85.1,18.8,85.1z"></path> <polygon fill="currentColor" points="45.7,48.7 51.3,54.3 77.2,28.5 77.2,37.2 85.2,37.2 85.2,14.9 62.8,14.9 62.8,22.9 71.5,22.9"></polygon></svg> <span class="sr-only">(opens new window)</span></span></a></nav></div></header> <div class="sidebar-mask"></div> <aside class="sidebar"><nav class="nav-links"><div class="nav-item"><a href="/note-combat/spring/" class="nav-link">
+  Spring
+</a></div><div class="nav-item"><a href="/note-combat/docker/" aria-current="page" class="nav-link router-link-exact-active router-link-active">
+  Docker
+</a></div> <a href="https://github.com/zq99299/note-combat" target="_blank" rel="noopener noreferrer" class="repo-link">
+    GitHub
+    <span><svg xmlns="http://www.w3.org/2000/svg" aria-hidden="true" focusable="false" x="0px" y="0px" viewBox="0 0 100 100" width="15" height="15" class="icon outbound"><path fill="currentColor" d="M18.8,85.1h56l0,0c2.2,0,4-1.8,4-4v-32h-8v28h-48v-48h28v-8h-32l0,0c-2.2,0-4,1.8-4,4v56C14.8,83.3,16.6,85.1,18.8,85.1z"></path> <polygon fill="currentColor" points="45.7,48.7 51.3,54.3 77.2,28.5 77.2,37.2 85.2,37.2 85.2,14.9 62.8,14.9 62.8,22.9 71.5,22.9"></polygon></svg> <span class="sr-only">(opens new window)</span></span></a></nav>  <ul class="sidebar-links"><li><a href="/note-combat/docker/" aria-current="page" class="active sidebar-link">docker</a><ul class="sidebar-sub-headers"><li class="sidebar-sub-header"><a href="/note-combat/docker/#关于-docker-compose-快速上手知识" class="sidebar-link">关于 docker-compose 快速上手知识</a><ul class="sidebar-sub-headers"><li class="sidebar-sub-header"><a href="/note-combat/docker/#网络" class="sidebar-link">网络</a></li><li class="sidebar-sub-header"><a href="/note-combat/docker/#docker-compose-命令" class="sidebar-link">docker-compose 命令</a></li><li class="sidebar-sub-header"><a href="/note-combat/docker/#不同配置的容器通信" class="sidebar-link">不同配置的容器通信</a></li></ul></li><li class="sidebar-sub-header"><a href="/note-combat/docker/#开发环境-部署-docker-elastic" class="sidebar-link">开发环境-部署 docker elastic</a></li><li class="sidebar-sub-header"><a href="/note-combat/docker/#开发环境-部署-docker-kibana" class="sidebar-link">开发环境-部署 docker kibana</a></li></ul></li></ul> </aside> <main class="page"> <div class="theme-default-content content__default"><h1 id="docker"><a href="#docker" class="header-anchor">#</a> docker</h1> <h2 id="关于-docker-compose-快速上手知识"><a href="#关于-docker-compose-快速上手知识" class="header-anchor">#</a> 关于 docker-compose 快速上手知识</h2> <p>里面的网络让我晕了。我们需要明确的有以下几点：</p> <ul><li><p>容器之间通信不能使用 localhost ，因为 localhost 指向的是容器自己</p></li> <li><p>通过 docker-compose 启动容器的话，会默认创建一个网络</p> <p>默认值为：<code>docker-compose.yml</code> 当前所在文件夹  +  配置中指定的网络名称，如 <code>目录_网络</code></p></li> <li><p>不同网络之间的容器不能直接通信（通过什么方式访问？笔者暂时不知道）</p></li> <li><p>相同网络直接访问是通过 <code>容器名:端口</code></p></li></ul> <p>那么现在有如下的一个配置：</p> <div class="language- line-numbers-mode"><pre class="language-text"><code>|- es
+  |- docker-compose.yml
+</code></pre> <div class="line-numbers-wrapper"><span class="line-number">1</span><br><span class="line-number">2</span><br></div></div><div class="language-yml line-numbers-mode"><pre class="language-yml"><code><span class="token key atrule">services</span><span class="token punctuation">:</span>
+  <span class="token key atrule">elasticsearch</span><span class="token punctuation">:</span>
+    <span class="token key atrule">image</span><span class="token punctuation">:</span> docker.elastic.co/elasticsearch/elasticsearch<span class="token punctuation">:</span>5.6.10
+    <span class="token key atrule">container_name</span><span class="token punctuation">:</span> elasticsearch			<span class="token comment"># 容器名</span>
+    <span class="token key atrule">environment</span><span class="token punctuation">:</span>
+      <span class="token punctuation">-</span> cluster.name=docker<span class="token punctuation">-</span>cluster
+    <span class="token key atrule">volumes</span><span class="token punctuation">:</span>
+      <span class="token punctuation">-</span> esdata<span class="token punctuation">:</span>/usr/share/elasticsearch/data
+      <span class="token punctuation">-</span> ./custom_elasticsearch.yml<span class="token punctuation">:</span>/usr/share/elasticsearch/config/elasticsearch.yml 
+    <span class="token key atrule">ports</span><span class="token punctuation">:</span>
+      <span class="token punctuation">-</span> 9200<span class="token punctuation">:</span><span class="token number">9200</span>
+      <span class="token punctuation">-</span> 9300<span class="token punctuation">:</span><span class="token number">9300</span>
+    <span class="token key atrule">networks</span><span class="token punctuation">:</span>
+      <span class="token punctuation">-</span> localnet							<span class="token comment"># 参与的网络</span>
+  <span class="token key atrule">kibana</span><span class="token punctuation">:</span>
+    <span class="token key atrule">image</span><span class="token punctuation">:</span> docker.elastic.co/kibana/kibana<span class="token punctuation">:</span>5.6.10
+    <span class="token key atrule">container_name</span><span class="token punctuation">:</span> kibana					<span class="token comment"># 容器名</span>
+    <span class="token key atrule">volumes</span><span class="token punctuation">:</span>
+      <span class="token punctuation">-</span> ./kibana.yml<span class="token punctuation">:</span>/usr/share/kibana/config/kibana.yml
+    <span class="token key atrule">ports</span><span class="token punctuation">:</span>
+      <span class="token punctuation">-</span> 5601<span class="token punctuation">:</span><span class="token number">5601</span>
+    <span class="token key atrule">networks</span><span class="token punctuation">:</span>
+      <span class="token punctuation">-</span> localnet    
+<span class="token key atrule">volumes</span><span class="token punctuation">:</span>
+  <span class="token key atrule">esdata</span><span class="token punctuation">:</span>
+    <span class="token key atrule">driver</span><span class="token punctuation">:</span> local 
+
+<span class="token key atrule">networks</span><span class="token punctuation">:</span>									<span class="token comment"># 创建一个网络</span>
+  <span class="token key atrule">localnet</span><span class="token punctuation">:</span>
+</code></pre> <div class="line-numbers-wrapper"><span class="line-number">1</span><br><span class="line-number">2</span><br><span class="line-number">3</span><br><span class="line-number">4</span><br><span class="line-number">5</span><br><span class="line-number">6</span><br><span class="line-number">7</span><br><span class="line-number">8</span><br><span class="line-number">9</span><br><span class="line-number">10</span><br><span class="line-number">11</span><br><span class="line-number">12</span><br><span class="line-number">13</span><br><span class="line-number">14</span><br><span class="line-number">15</span><br><span class="line-number">16</span><br><span class="line-number">17</span><br><span class="line-number">18</span><br><span class="line-number">19</span><br><span class="line-number">20</span><br><span class="line-number">21</span><br><span class="line-number">22</span><br><span class="line-number">23</span><br><span class="line-number">24</span><br><span class="line-number">25</span><br><span class="line-number">26</span><br><span class="line-number">27</span><br><span class="line-number">28</span><br><span class="line-number">29</span><br></div></div><p>在 es 目录下通过 <code>docker-compose up</code> 启动服务后，那么得出以下信息：</p> <ul><li><p>创建一个 <code>es_localnet</code> 的网络</p> <p>如果配置文件中没有配置 networks，则会创建一个 <code>es_default</code> 的默认网络</p></li> <li><p>kibana 配置文件中要指向这里的 elasticsearch 的话，需要写 <code>http://elasticsearch:9200</code></p></li></ul> <h3 id="网络"><a href="#网络" class="header-anchor">#</a> 网络</h3> <div class="language- line-numbers-mode"><pre class="language-text"><code># 查看网络
+docker network ls
+# 移除网络
+docker remove 网络名
+</code></pre> <div class="line-numbers-wrapper"><span class="line-number">1</span><br><span class="line-number">2</span><br><span class="line-number">3</span><br><span class="line-number">4</span><br></div></div><h3 id="docker-compose-命令"><a href="#docker-compose-命令" class="header-anchor">#</a> docker-compose 命令</h3> <div class="language-bash line-numbers-mode"><pre class="language-bash"><code><span class="token comment"># 前台启动一键更新服务; 需要在 docker-compose.yml 文件同级目录</span>
+<span class="token comment"># 后面跟参数 -d, 则是后台</span>
+docker-compose up
+
+<span class="token comment"># 销毁容器,后面加参与  -v 会把网络和卷也销毁</span>
+docker-compose down
+
+<span class="token comment"># 查看日志, 后面增加服务名则查看指定的服务日志</span>
+docker-compose logs
+</code></pre> <div class="line-numbers-wrapper"><span class="line-number">1</span><br><span class="line-number">2</span><br><span class="line-number">3</span><br><span class="line-number">4</span><br><span class="line-number">5</span><br><span class="line-number">6</span><br><span class="line-number">7</span><br><span class="line-number">8</span><br><span class="line-number">9</span><br></div></div><h3 id="不同配置的容器通信"><a href="#不同配置的容器通信" class="header-anchor">#</a> 不同配置的容器通信</h3> <p>前面说过，一个 <code>docker-compose.yml</code> 如果不配置会创建默认的，反正是以目录来创建，也就是说不同配置的服务，加入的默认或则自定义的网络其实不在同一个，那么如何加入同一个已经存在的网络呢？</p> <div class="language-yml line-numbers-mode"><pre class="language-yml"><code><span class="token key atrule">networks</span><span class="token punctuation">:</span> 
+ <span class="token key atrule">default</span><span class="token punctuation">:</span>
+    <span class="token key atrule">external</span><span class="token punctuation">:</span>
+      <span class="token key atrule">name</span><span class="token punctuation">:</span> elastic_default
+</code></pre> <div class="line-numbers-wrapper"><span class="line-number">1</span><br><span class="line-number">2</span><br><span class="line-number">3</span><br><span class="line-number">4</span><br></div></div><p>上述通过配置，默认加入的网络为  <code>external</code> 外部的，该网络在使用 <code>docker-compose down -v</code> 时，不会被删除，会直接跳过；</p> <p>所以，在开发环境中，为了简单，还是使用同一份  <code>docker-compose.xml</code> 配置来部署测试环境的中间件，比较省事</p> <h2 id="开发环境-部署-docker-elastic"><a href="#开发环境-部署-docker-elastic" class="header-anchor">#</a> 开发环境-部署 docker elastic</h2> <blockquote><p>Elastic 版本：5.6.10</p> <p><a href="https://www.elastic.co/guide/en/elasticsearch/reference/5.6/docker.html" target="_blank" rel="noopener noreferrer">官方教程<span><svg xmlns="http://www.w3.org/2000/svg" aria-hidden="true" focusable="false" x="0px" y="0px" viewBox="0 0 100 100" width="15" height="15" class="icon outbound"><path fill="currentColor" d="M18.8,85.1h56l0,0c2.2,0,4-1.8,4-4v-32h-8v28h-48v-48h28v-8h-32l0,0c-2.2,0-4,1.8-4,4v56C14.8,83.3,16.6,85.1,18.8,85.1z"></path> <polygon fill="currentColor" points="45.7,48.7 51.3,54.3 77.2,28.5 77.2,37.2 85.2,37.2 85.2,14.9 62.8,14.9 62.8,22.9 71.5,22.9"></polygon></svg> <span class="sr-only">(opens new window)</span></span></a></p></blockquote> <div class="language-bash line-numbers-mode"><pre class="language-bash"><code>docker pull docker.elastic.co/elasticsearch/elasticsearch:5.6.10
+
+<span class="token comment"># 开发模式下快速启动一个 elastic</span>
+docker run -p <span class="token number">9200</span>:9200 -p <span class="token number">9300</span>:9300 -e <span class="token string">&quot;discovery.type=single-node&quot;</span> docker.elastic.co/elasticsearch/elasticsearch:5.6.10
+
+<span class="token comment"># 创建数据卷</span>
+docker run -p <span class="token number">9200</span>:9200 -p <span class="token number">9300</span>:9300 -e <span class="token string">&quot;discovery.type=single-node&quot;</span> -v elasticdata:/usr/share/elasticsearch/data --privileged -v full_path_to/custom_elasticsearch.yml:/usr/share/elasticsearch/config/elasticsearch.yml docker.elastic.co/elasticsearch/elasticsearch:5.6.10
+</code></pre> <div class="line-numbers-wrapper"><span class="line-number">1</span><br><span class="line-number">2</span><br><span class="line-number">3</span><br><span class="line-number">4</span><br><span class="line-number">5</span><br><span class="line-number">6</span><br><span class="line-number">7</span><br></div></div><ul><li>第一个 <code>-v</code> 挂载了一个卷：数据目录存储</li> <li>第二个 <code>-v</code> 挂载了本地的一个文件：elastic 的配置文件</li></ul> <p>使用 docker-compose，<code>docker-compose.yml</code></p> <div class="language-yml line-numbers-mode"><pre class="language-yml"><code><span class="token key atrule">services</span><span class="token punctuation">:</span>
+  <span class="token key atrule">elasticsearch</span><span class="token punctuation">:</span>
+    <span class="token key atrule">image</span><span class="token punctuation">:</span> docker.elastic.co/elasticsearch/elasticsearch<span class="token punctuation">:</span>5.6.10
+    <span class="token key atrule">container_name</span><span class="token punctuation">:</span> elasticsearch
+    <span class="token key atrule">environment</span><span class="token punctuation">:</span>
+      <span class="token punctuation">-</span> cluster.name=docker<span class="token punctuation">-</span>cluster
+      <span class="token punctuation">-</span> bootstrap.memory_lock=true
+    <span class="token key atrule">volumes</span><span class="token punctuation">:</span>
+      <span class="token punctuation">-</span> esdata<span class="token punctuation">:</span>/usr/share/elasticsearch/data
+      <span class="token punctuation">-</span> ./custom_elasticsearch.yml<span class="token punctuation">:</span>/usr/share/elasticsearch/config/elasticsearch.yml 
+    <span class="token key atrule">ports</span><span class="token punctuation">:</span>
+      <span class="token punctuation">-</span> 9200<span class="token punctuation">:</span><span class="token number">9200</span>
+      <span class="token punctuation">-</span> 9300<span class="token punctuation">:</span><span class="token number">9300</span>
+<span class="token key atrule">volumes</span><span class="token punctuation">:</span>
+  <span class="token key atrule">esdata</span><span class="token punctuation">:</span>
+    <span class="token key atrule">driver</span><span class="token punctuation">:</span> local 
+</code></pre> <div class="line-numbers-wrapper"><span class="line-number">1</span><br><span class="line-number">2</span><br><span class="line-number">3</span><br><span class="line-number">4</span><br><span class="line-number">5</span><br><span class="line-number">6</span><br><span class="line-number">7</span><br><span class="line-number">8</span><br><span class="line-number">9</span><br><span class="line-number">10</span><br><span class="line-number">11</span><br><span class="line-number">12</span><br><span class="line-number">13</span><br><span class="line-number">14</span><br><span class="line-number">15</span><br><span class="line-number">16</span><br></div></div><p>custom_elasticsearch.yml</p> <div class="language-yml line-numbers-mode"><pre class="language-yml"><code><span class="token key atrule">discovery</span><span class="token punctuation">:</span>
+    <span class="token key atrule">type</span><span class="token punctuation">:</span> single<span class="token punctuation">-</span>node  <span class="token comment"># 单节点模式</span>
+<span class="token key atrule">network</span><span class="token punctuation">:</span>
+    <span class="token key atrule">host</span><span class="token punctuation">:</span> 0.0.0.0	   <span class="token comment"># 开放远程访问</span>
+
+<span class="token key atrule">xpack</span><span class="token punctuation">:</span>
+    <span class="token key atrule">security</span><span class="token punctuation">:</span>
+        <span class="token key atrule">enabled</span><span class="token punctuation">:</span> <span class="token boolean important">false</span>  <span class="token comment"># 关闭用户名密码保护</span>
+</code></pre> <div class="line-numbers-wrapper"><span class="line-number">1</span><br><span class="line-number">2</span><br><span class="line-number">3</span><br><span class="line-number">4</span><br><span class="line-number">5</span><br><span class="line-number">6</span><br><span class="line-number">7</span><br><span class="line-number">8</span><br></div></div><h2 id="开发环境-部署-docker-kibana"><a href="#开发环境-部署-docker-kibana" class="header-anchor">#</a> 开发环境-部署 docker kibana</h2> <blockquote><p>Kibana 版本：5.6.10</p> <p><a href="https://www.elastic.co/guide/en/kibana/5.6/_pulling_the_image.html" target="_blank" rel="noopener noreferrer">官方教程<span><svg xmlns="http://www.w3.org/2000/svg" aria-hidden="true" focusable="false" x="0px" y="0px" viewBox="0 0 100 100" width="15" height="15" class="icon outbound"><path fill="currentColor" d="M18.8,85.1h56l0,0c2.2,0,4-1.8,4-4v-32h-8v28h-48v-48h28v-8h-32l0,0c-2.2,0-4,1.8-4,4v56C14.8,83.3,16.6,85.1,18.8,85.1z"></path> <polygon fill="currentColor" points="45.7,48.7 51.3,54.3 77.2,28.5 77.2,37.2 85.2,37.2 85.2,14.9 62.8,14.9 62.8,22.9 71.5,22.9"></polygon></svg> <span class="sr-only">(opens new window)</span></span></a></p></blockquote> <div class="language- line-numbers-mode"><pre class="language-text"><code>docker pull docker.elastic.co/kibana/kibana:5.6.10
+</code></pre> <div class="line-numbers-wrapper"><span class="line-number">1</span><br></div></div><p>docker-compose.yml</p> <div class="language-yml line-numbers-mode"><pre class="language-yml"><code><span class="token key atrule">services</span><span class="token punctuation">:</span>
+  <span class="token key atrule">kibana</span><span class="token punctuation">:</span>
+    <span class="token key atrule">image</span><span class="token punctuation">:</span> docker.elastic.co/kibana/kibana<span class="token punctuation">:</span>5.6.10
+    <span class="token key atrule">volumes</span><span class="token punctuation">:</span>
+      <span class="token punctuation">-</span> ./kibana.yml<span class="token punctuation">:</span>/usr/share/kibana/config/kibana.yml
+</code></pre> <div class="line-numbers-wrapper"><span class="line-number">1</span><br><span class="line-number">2</span><br><span class="line-number">3</span><br><span class="line-number">4</span><br><span class="line-number">5</span><br></div></div><p>kibana.yml</p> <div class="language-yml line-numbers-mode"><pre class="language-yml"><code><span class="token key atrule">server</span><span class="token punctuation">:</span>
+  <span class="token key atrule">host</span><span class="token punctuation">:</span> <span class="token string">&quot;0.0.0.0&quot;</span>	<span class="token comment"># 开放远程访问</span>
+<span class="token key atrule">elasticsearch</span><span class="token punctuation">:</span>
+   <span class="token key atrule">url</span><span class="token punctuation">:</span> http<span class="token punctuation">:</span>//elasticsearch<span class="token punctuation">:</span>9200/	  <span class="token comment"># 通过服务名链接容器中的其他 es 服务</span>
+</code></pre> <div class="line-numbers-wrapper"><span class="line-number">1</span><br><span class="line-number">2</span><br><span class="line-number">3</span><br><span class="line-number">4</span><br></div></div></div> <footer class="page-edit"><div class="edit-link"><a href="https://github.com/zq99299/note-combat/edit/main/docs/docker/README.md" target="_blank" rel="noopener noreferrer">帮助我们改善此页面！</a> <span><svg xmlns="http://www.w3.org/2000/svg" aria-hidden="true" focusable="false" x="0px" y="0px" viewBox="0 0 100 100" width="15" height="15" class="icon outbound"><path fill="currentColor" d="M18.8,85.1h56l0,0c2.2,0,4-1.8,4-4v-32h-8v28h-48v-48h28v-8h-32l0,0c-2.2,0-4,1.8-4,4v56C14.8,83.3,16.6,85.1,18.8,85.1z"></path> <polygon fill="currentColor" points="45.7,48.7 51.3,54.3 77.2,28.5 77.2,37.2 85.2,37.2 85.2,14.9 62.8,14.9 62.8,22.9 71.5,22.9"></polygon></svg> <span class="sr-only">(opens new window)</span></span></div> <div class="last-updated"><span class="prefix">上次更新:</span> <span class="time">2021-01-12 08:17:33</span></div></footer> <!----> </main></div><div class="global-ui"><!----><!----></div></div>
+    <script src="/note-combat/assets/js/app.b935488c.js" defer></script><script src="/note-combat/assets/js/2.5a1b50d2.js" defer></script><script src="/note-combat/assets/js/9.15d6a915.js" defer></script><script src="/note-combat/assets/js/3.cf5f66e5.js" defer></script>
+  </body>
+</html>
