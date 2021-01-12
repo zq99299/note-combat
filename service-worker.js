@@ -27,7 +27,7 @@ self.addEventListener('message', (event) => {
 self.__precacheManifest = [
   {
     "url": "404.html",
-    "revision": "df16c5847e82793ccfd120f5be601a98"
+    "revision": "fe527ce41c98c641151f386ee65af02b"
   },
   {
     "url": "assets/css/0.styles.3c59a9c8.css",
@@ -78,28 +78,28 @@ self.__precacheManifest = [
     "revision": "38109951f8297c336782b79d634a8ce6"
   },
   {
-    "url": "assets/js/9.15d6a915.js",
-    "revision": "16fa1e627bee26446563f07dacd6c885"
+    "url": "assets/js/9.55199f42.js",
+    "revision": "67d24ae60631f08955f1aa6c39bd6a19"
   },
   {
-    "url": "assets/js/app.b935488c.js",
-    "revision": "7de9e73009862ceb3822227a932cde0a"
+    "url": "assets/js/app.b8a1cf7e.js",
+    "revision": "76e34ba84839d794feb48688fb59f23e"
   },
   {
     "url": "docker/index.html",
-    "revision": "e7716d0fd6006efd4ff6a01dd97869c6"
+    "revision": "0ae0faddd4bb5c9f965bbb37877e2aba"
   },
   {
     "url": "index.html",
-    "revision": "d18c4c380a624bfee84b6709e44d6c8b"
+    "revision": "e20738dc1a7c433beb4523e2254f535a"
   },
   {
     "url": "navigation.html",
-    "revision": "c90756ae64ce393e74ad0928dedd1477"
+    "revision": "c91ae6fdba148dfee552f917e9d172a7"
   },
   {
     "url": "spring/index.html",
-    "revision": "789f4463e4f9f0cfdac7603b970f96d9"
+    "revision": "d0e00ddeb8d67d4f382283914ff74333"
   }
 ].concat(self.__precacheManifest || []);
 workbox.precaching.precacheAndRoute(self.__precacheManifest, {});
