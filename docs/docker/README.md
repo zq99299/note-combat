@@ -82,7 +82,10 @@ docker-compose up
 # 销毁容器,后面加参与  -v 会把网络和卷也销毁
 docker-compose down
 
-# 查看日志, 后面增加服务名则查看指定的服务日志
+# 查看日志
+# 后面增加服务名则查看指定的服务日志
+# -f 参数：持续的输出日志
+# -t 参数：显示时间戳
 docker-compose logs
 ```
 
