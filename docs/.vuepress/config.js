@@ -1,4 +1,5 @@
 const springSc = require('../spring')
+const dockerSc = require('../docker')
 
 module.exports = {
   // ~ 开发配置
@@ -35,10 +36,12 @@ module.exports = {
       updatePopup: true // Boolean | Object, 默认值是 undefined.
     },
     nav: [
-      { text: 'Spring 实战技巧', link: '/spring/' }
+      { text: 'Spring', link: '/spring/' },
+      { text: 'Docker', link: '/docker/' }
     ],
     sidebar: {
-      '/spring/': springSc()
+      '/spring/': springSc(),
+      '/docker/': dockerSc()
     }
   },
   plugins: [
