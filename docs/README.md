@@ -1,5 +1,6 @@
 ---
 home: true
+heroImage: MLOGO200x200.png
 actionText: Spring 实战技巧
 actionLink: /spring/
 features:
