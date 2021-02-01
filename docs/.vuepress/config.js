@@ -11,6 +11,10 @@ module.exports = {
   title: '实战笔记',
   description: '主要定位是在工作中实际遇到的难题、没有接触过、或稍有难度的真实场景解决记录',
   base: '/note-combat/', // gh-page 中是增加了项目名
+  head:[
+    ['link', { rel: 'icon', href: '/favicon.ico' }],
+    ['link', { rel: 'manifest', href: '/manifest.json' }],
+  ],
   markdown: {
     lineNumbers: true
   },
