@@ -27,7 +27,7 @@ self.addEventListener('message', (event) => {
 self.__precacheManifest = [
   {
     "url": "404.html",
-    "revision": "3c09798069f6f26f9ee97e9f9a08594c"
+    "revision": "084004a74a666a477471801495cc2d5d"
   },
   {
     "url": "assets/css/0.styles.9121fd13.css",
@@ -114,16 +114,16 @@ self.__precacheManifest = [
     "revision": "d83254ea01dca3a722e7d8fbfa6301a5"
   },
   {
-    "url": "assets/js/app.c1690f70.js",
-    "revision": "ea42b88c4242ce781bee4859bcea27f0"
+    "url": "assets/js/app.263d2106.js",
+    "revision": "c253964773f97e7468bd672b0ce263f5"
   },
   {
     "url": "docker/index.html",
-    "revision": "6ebea3f46ff6d723fb707396a6fc0dfb"
+    "revision": "97f529430e1fd5071c56bfb13aae5cb7"
   },
   {
     "url": "index.html",
-    "revision": "362cf25f43776a9349531fb22f9a6ed9"
+    "revision": "3fe349176d47a106488fbeaa5dbe044d"
   },
   {
     "url": "MLOGO100x100.png",
@@ -139,11 +139,11 @@ self.__precacheManifest = [
   },
   {
     "url": "navigation.html",
-    "revision": "95c67d4e117daed78da9be75b700c9c1"
+    "revision": "206b66c026c1658a16cd593bc92d735b"
   },
   {
     "url": "spring/index.html",
-    "revision": "7a802bbea01ba5587d51a9e95824f16c"
+    "revision": "d4ada5c026b67ca94ecb0b0ddbae7cdc"
   }
 ].concat(self.__precacheManifest || []);
 workbox.precaching.precacheAndRoute(self.__precacheManifest, {});
