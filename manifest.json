@@ -1,23 +1,23 @@
 {
-  "name": "NOTE-BOOK2",
-  "short_name": "MRCODE",
+  "name": "note-combat",
+  "short_name": "note-combat",
   "start_url": ".",
   "display": "standalone",
   "background_color": "#fff",
-  "description": "零散短小的笔记项目，MRCODE 笔记本",
+  "description": "实战笔记：主要定位是在工作中实际遇到的难题、没有接触过、或稍有难度的真实场景解决记录；",
   "icons": [
     {
-      "src": "MLOGO100x100.png",
+      "src": "mlogo.svg",
       "sizes": "48x48",
       "type": "image/png"
     },
     {
-      "src": "MLOGO100x100.png",
+      "src": "mlogo.svg",
       "sizes": "100x100",
       "type": "image/png"
     },
     {
-      "src": "MLOGO200x200.png",
+      "src": "mlogo.svg",
       "sizes": "200x200",
       "type": "image/png"
     }

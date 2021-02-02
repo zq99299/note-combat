@@ -27,7 +27,7 @@ self.addEventListener('message', (event) => {
 self.__precacheManifest = [
   {
     "url": "404.html",
-    "revision": "084004a74a666a477471801495cc2d5d"
+    "revision": "2cb6cb9f9f5c78d1a96263271c1ed994"
   },
   {
     "url": "assets/css/0.styles.9121fd13.css",
@@ -114,36 +114,28 @@ self.__precacheManifest = [
     "revision": "d83254ea01dca3a722e7d8fbfa6301a5"
   },
   {
-    "url": "assets/js/app.263d2106.js",
-    "revision": "c253964773f97e7468bd672b0ce263f5"
+    "url": "assets/js/app.fa360f16.js",
+    "revision": "1f3574844c4a7dd8e9cf042f039ebbb3"
   },
   {
     "url": "docker/index.html",
-    "revision": "97f529430e1fd5071c56bfb13aae5cb7"
+    "revision": "aecbfec47f71c248128e40b972e8ec5a"
   },
   {
     "url": "index.html",
-    "revision": "3fe349176d47a106488fbeaa5dbe044d"
+    "revision": "907d08773cb5a90bfba6e9bd2b882cd4"
   },
   {
-    "url": "MLOGO100x100.png",
-    "revision": "883c132dcc91e5bbec348b5f079b0a73"
-  },
-  {
-    "url": "MLOGO200x200.png",
-    "revision": "34f10abae491dc74f3df354df438253f"
-  },
-  {
-    "url": "MLOGO40x40.png",
-    "revision": "a1f84e51a43c597be40640823ae81136"
+    "url": "mlogo.svg",
+    "revision": "ac847ef8c526f385e7288c4808a7b830"
   },
   {
     "url": "navigation.html",
-    "revision": "206b66c026c1658a16cd593bc92d735b"
+    "revision": "5719d223c8531ca3cdc48f8171ad4042"
   },
   {
     "url": "spring/index.html",
-    "revision": "d4ada5c026b67ca94ecb0b0ddbae7cdc"
+    "revision": "62a54b572d8770f1b10cd4ced5044382"
   }
 ].concat(self.__precacheManifest || []);
 workbox.precaching.precacheAndRoute(self.__precacheManifest, {});
