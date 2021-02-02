@@ -1,6 +1,6 @@
 ---
 home: true
-heroImage: MLOGO200x200.png
+heroImage: mlogo.svg
 actionText: Spring 实战技巧
 actionLink: /spring/
 features:
