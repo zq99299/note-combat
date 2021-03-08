@@ -66,7 +66,7 @@ build-bootJar:
   # 定义阶段，用于执行顺序的控制
   stage: build
   # 使用镜像运行，选择有 gradle 的镜像
-  image: bj-docker.runshopstore.com/gradle:6.7.1-jdk8
+  image: xxx/gradle:6.7.1-jdk8
   # 定义执行脚本
   script:
     # /builds/data/project-citest/.gradle
