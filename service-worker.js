@@ -27,7 +27,7 @@ self.addEventListener('message', (event) => {
 self.__precacheManifest = [
   {
     "url": "404.html",
-    "revision": "50759acb9c1ab49ab3ea0053f9784398"
+    "revision": "4cec0e2a9296c1d9cfa24ceb01160a35"
   },
   {
     "url": "assets/css/0.styles.9121fd13.css",
@@ -74,8 +74,8 @@ self.__precacheManifest = [
     "revision": "96f44a414a4bece12e398ea799c430ab"
   },
   {
-    "url": "assets/js/11.3e102aea.js",
-    "revision": "7c0e948c60d2b578b92209f926b77075"
+    "url": "assets/js/11.e50e7754.js",
+    "revision": "b47f95ee718b66820a1fd9577719f44d"
   },
   {
     "url": "assets/js/12.e229e12c.js",
@@ -122,24 +122,24 @@ self.__precacheManifest = [
     "revision": "d83254ea01dca3a722e7d8fbfa6301a5"
   },
   {
-    "url": "assets/js/app.13225bcb.js",
-    "revision": "54eb991ff83f12114c88fdd80403193c"
+    "url": "assets/js/app.1acf5fa8.js",
+    "revision": "ededf9068e387afb7b9343f9601ea981"
   },
   {
     "url": "docker/index.html",
-    "revision": "405a2169a7db02f50db5b63eb85a71c5"
+    "revision": "8c54f6db8121925bed2fffe9ede22d48"
   },
   {
     "url": "gitlab/cicd/index.html",
-    "revision": "9989011d122445cf58a548bcdd12d39d"
+    "revision": "496a65943c422e12e679b70ad137d9b6"
   },
   {
     "url": "gitlab/index.html",
-    "revision": "8dcf81b46e54b147be8114315186ce3e"
+    "revision": "eb9fc534c02bcb36d49460289f1f023a"
   },
   {
     "url": "index.html",
-    "revision": "0100503a6573961cc33212aef3b00b53"
+    "revision": "53518fc564bdc59b1080664f846a4d18"
   },
   {
     "url": "mlogo.svg",
@@ -147,11 +147,11 @@ self.__precacheManifest = [
   },
   {
     "url": "navigation.html",
-    "revision": "c563e9aa6e555997f764e78a836abbfd"
+    "revision": "fc7c5ba81bfa4b515912eaf39302f4eb"
   },
   {
     "url": "spring/index.html",
-    "revision": "a43a9a9937fea37def857b37f02198d8"
+    "revision": "ef4495875d1e20cb0ded960c7ee165c1"
   }
 ].concat(self.__precacheManifest || []);
 workbox.precaching.precacheAndRoute(self.__precacheManifest, {});
