@@ -1,0 +1,269 @@
+<!DOCTYPE html>
+<html lang="en-US">
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width,initial-scale=1">
+    <title>CI/CD | 实战笔记</title>
+    <meta name="generator" content="VuePress 1.8.0">
+    <link rel="icon" href="/note-combat/favicon.ico">
+    <link rel="manifest" href="/note-combat/manifest.json">
+    <meta name="description" content="主要定位是在工作中实际遇到的难题、没有接触过、或稍有难度的真实场景解决记录">
+    
+    <link rel="preload" href="/note-combat/assets/css/0.styles.9121fd13.css" as="style"><link rel="preload" href="/note-combat/assets/js/app.c5111373.js" as="script"><link rel="preload" href="/note-combat/assets/js/2.8f2b6977.js" as="script"><link rel="preload" href="/note-combat/assets/js/11.b4a77ff2.js" as="script"><link rel="preload" href="/note-combat/assets/js/3.9baef331.js" as="script"><link rel="prefetch" href="/note-combat/assets/js/10.48a88567.js"><link rel="prefetch" href="/note-combat/assets/js/12.e229e12c.js"><link rel="prefetch" href="/note-combat/assets/js/13.d18d9b62.js"><link rel="prefetch" href="/note-combat/assets/js/14.0d20196b.js"><link rel="prefetch" href="/note-combat/assets/js/4.1131d3d3.js"><link rel="prefetch" href="/note-combat/assets/js/5.19ecd13d.js"><link rel="prefetch" href="/note-combat/assets/js/6.4e165537.js"><link rel="prefetch" href="/note-combat/assets/js/7.19d2344a.js"><link rel="prefetch" href="/note-combat/assets/js/8.cfb618f8.js"><link rel="prefetch" href="/note-combat/assets/js/9.e150cb2a.js">
+    <link rel="stylesheet" href="/note-combat/assets/css/0.styles.9121fd13.css">
+  </head>
+  <body>
+    <div id="app" data-server-rendered="true"><div class="theme-container"><header class="navbar"><div class="sidebar-button"><svg xmlns="http://www.w3.org/2000/svg" aria-hidden="true" role="img" viewBox="0 0 448 512" class="icon"><path fill="currentColor" d="M436 124H12c-6.627 0-12-5.373-12-12V80c0-6.627 5.373-12 12-12h424c6.627 0 12 5.373 12 12v32c0 6.627-5.373 12-12 12zm0 160H12c-6.627 0-12-5.373-12-12v-32c0-6.627 5.373-12 12-12h424c6.627 0 12 5.373 12 12v32c0 6.627-5.373 12-12 12zm0 160H12c-6.627 0-12-5.373-12-12v-32c0-6.627 5.373-12 12-12h424c6.627 0 12 5.373 12 12v32c0 6.627-5.373 12-12 12z"></path></svg></div> <a href="/note-combat/" class="home-link router-link-active"><img src="mlogo.svg" alt="实战笔记" class="logo"> <span class="site-name can-hide">实战笔记</span></a> <div class="links"><div class="search-box"><input aria-label="Search" autocomplete="off" spellcheck="false" value=""> <!----></div> <nav class="nav-links can-hide"><div class="nav-item"><a href="/note-combat/spring/" class="nav-link">
+  Spring
+</a></div><div class="nav-item"><a href="/note-combat/docker/" class="nav-link">
+  Docker
+</a></div><div class="nav-item"><a href="/note-combat/gitlab/" class="nav-link router-link-active">
+  GitLab
+</a></div> <a href="https://github.com/zq99299/note-combat" target="_blank" rel="noopener noreferrer" class="repo-link">
+    GitHub
+    <span><svg xmlns="http://www.w3.org/2000/svg" aria-hidden="true" focusable="false" x="0px" y="0px" viewBox="0 0 100 100" width="15" height="15" class="icon outbound"><path fill="currentColor" d="M18.8,85.1h56l0,0c2.2,0,4-1.8,4-4v-32h-8v28h-48v-48h28v-8h-32l0,0c-2.2,0-4,1.8-4,4v56C14.8,83.3,16.6,85.1,18.8,85.1z"></path> <polygon fill="currentColor" points="45.7,48.7 51.3,54.3 77.2,28.5 77.2,37.2 85.2,37.2 85.2,14.9 62.8,14.9 62.8,22.9 71.5,22.9"></polygon></svg> <span class="sr-only">(opens new window)</span></span></a></nav></div></header> <div class="sidebar-mask"></div> <aside class="sidebar"><nav class="nav-links"><div class="nav-item"><a href="/note-combat/spring/" class="nav-link">
+  Spring
+</a></div><div class="nav-item"><a href="/note-combat/docker/" class="nav-link">
+  Docker
+</a></div><div class="nav-item"><a href="/note-combat/gitlab/" class="nav-link router-link-active">
+  GitLab
+</a></div> <a href="https://github.com/zq99299/note-combat" target="_blank" rel="noopener noreferrer" class="repo-link">
+    GitHub
+    <span><svg xmlns="http://www.w3.org/2000/svg" aria-hidden="true" focusable="false" x="0px" y="0px" viewBox="0 0 100 100" width="15" height="15" class="icon outbound"><path fill="currentColor" d="M18.8,85.1h56l0,0c2.2,0,4-1.8,4-4v-32h-8v28h-48v-48h28v-8h-32l0,0c-2.2,0-4,1.8-4,4v56C14.8,83.3,16.6,85.1,18.8,85.1z"></path> <polygon fill="currentColor" points="45.7,48.7 51.3,54.3 77.2,28.5 77.2,37.2 85.2,37.2 85.2,14.9 62.8,14.9 62.8,22.9 71.5,22.9"></polygon></svg> <span class="sr-only">(opens new window)</span></span></a></nav>  <ul class="sidebar-links"><li><a href="/note-combat/gitlab/" aria-current="page" class="sidebar-link">GitLab</a></li><li><a href="/note-combat/gitlab/cicd/" aria-current="page" class="active sidebar-link">CI/CD</a><ul class="sidebar-sub-headers"><li class="sidebar-sub-header"><a href="/note-combat/gitlab/cicd/#打包-bootjar" class="sidebar-link">打包 bootJar</a></li><li class="sidebar-sub-header"><a href="/note-combat/gitlab/cicd/#缓存-gradle-的-jar-包依赖" class="sidebar-link">缓存 gradle 的 jar 包依赖</a></li><li class="sidebar-sub-header"><a href="/note-combat/gitlab/cicd/#配置-artifacts" class="sidebar-link">配置 artifacts</a></li><li class="sidebar-sub-header"><a href="/note-combat/gitlab/cicd/#使用-docker-打成-image" class="sidebar-link">使用 docker 打成 image</a></li><li class="sidebar-sub-header"><a href="/note-combat/gitlab/cicd/#一些关键文档配置路径" class="sidebar-link">一些关键文档配置路径</a></li><li class="sidebar-sub-header"><a href="/note-combat/gitlab/cicd/#生产级配置写法" class="sidebar-link">生产级配置写法</a></li><li class="sidebar-sub-header"><a href="/note-combat/gitlab/cicd/#一些个性化作业" class="sidebar-link">一些个性化作业</a></li><li class="sidebar-sub-header"><a href="/note-combat/gitlab/cicd/#版本号生成-semantic-release" class="sidebar-link">版本号生成 semantic-release</a></li></ul></li></ul> </aside> <main class="page"> <div class="theme-default-content content__default"><h1 id="ci-cd"><a href="#ci-cd" class="header-anchor">#</a> CI/CD</h1> <blockquote><p><a href="https://docs.gitlab.com/ee/ci/README.html" target="_blank" rel="noopener noreferrer">官方文档<span><svg xmlns="http://www.w3.org/2000/svg" aria-hidden="true" focusable="false" x="0px" y="0px" viewBox="0 0 100 100" width="15" height="15" class="icon outbound"><path fill="currentColor" d="M18.8,85.1h56l0,0c2.2,0,4-1.8,4-4v-32h-8v28h-48v-48h28v-8h-32l0,0c-2.2,0-4,1.8-4,4v56C14.8,83.3,16.6,85.1,18.8,85.1z"></path> <polygon fill="currentColor" points="45.7,48.7 51.3,54.3 77.2,28.5 77.2,37.2 85.2,37.2 85.2,14.9 62.8,14.9 62.8,22.9 71.5,22.9"></polygon></svg> <span class="sr-only">(opens new window)</span></span></a></p></blockquote> <p>基本概念之类的这里不再赘述，要使用 CI/CD 的前提是需要安装 GitLab Runner 并注册到你的 GitLab 服务器上，所有的 CI/CD 就是在该 Runner 上进行处理交互</p> <p>对于 GitLab Runner 安装笔者这里没有机会实践，也不进行，使用已经安装好的单机 docker 环境来自动化打包 boot 程序为 docker 镜像</p> <p>至于初体验，官网 <a href="https://docs.gitlab.com/ee/ci/quick_start/#create-a-gitlab-ciyml-file" target="_blank" rel="noopener noreferrer">开始<span><svg xmlns="http://www.w3.org/2000/svg" aria-hidden="true" focusable="false" x="0px" y="0px" viewBox="0 0 100 100" width="15" height="15" class="icon outbound"><path fill="currentColor" d="M18.8,85.1h56l0,0c2.2,0,4-1.8,4-4v-32h-8v28h-48v-48h28v-8h-32l0,0c-2.2,0-4,1.8-4,4v56C14.8,83.3,16.6,85.1,18.8,85.1z"></path> <polygon fill="currentColor" points="45.7,48.7 51.3,54.3 77.2,28.5 77.2,37.2 85.2,37.2 85.2,14.9 62.8,14.9 62.8,22.9 71.5,22.9"></polygon></svg> <span class="sr-only">(opens new window)</span></span></a> 里已经给出了例子，全部是使用 echo 命令输出，定义了几个 job 作业，可以自己去实验下</p> <p>学习路径：</p> <ol><li>先把环境搭建起来， gitlab 服务器、gitlab runner 注册上</li> <li>CI/DI 官方文档中的开始、流水线、job 等概念先读一遍</li> <li><a href="https://docs.gitlab.com/ee/ci/yaml/README.html" target="_blank" rel="noopener noreferrer">.gitlab-ci.yml 章节<span><svg xmlns="http://www.w3.org/2000/svg" aria-hidden="true" focusable="false" x="0px" y="0px" viewBox="0 0 100 100" width="15" height="15" class="icon outbound"><path fill="currentColor" d="M18.8,85.1h56l0,0c2.2,0,4-1.8,4-4v-32h-8v28h-48v-48h28v-8h-32l0,0c-2.2,0-4,1.8-4,4v56C14.8,83.3,16.6,85.1,18.8,85.1z"></path> <polygon fill="currentColor" points="45.7,48.7 51.3,54.3 77.2,28.5 77.2,37.2 85.2,37.2 85.2,14.9 62.8,14.9 62.8,22.9 71.5,22.9"></polygon></svg> <span class="sr-only">(opens new window)</span></span></a>，可以参考这里的内容完成自己的 yml 编写</li></ol> <h2 id="打包-bootjar"><a href="#打包-bootjar" class="header-anchor">#</a> 打包 bootJar</h2> <div class="language-yml line-numbers-mode"><pre class="language-yml"><code><span class="token comment"># 默认设置，所有作业都默认使用这里的配置</span>
+<span class="token key atrule">default</span><span class="token punctuation">:</span>
+  <span class="token key atrule">tags</span><span class="token punctuation">:</span>
+    <span class="token punctuation">-</span> package  <span class="token comment"># 表示使用哪一个 runner 来运行</span>
+
+<span class="token comment">### 定义阶段执行顺序</span>
+<span class="token comment"># 官网文档：https://docs.gitlab.com/ee/ci/yaml/README.html#stage</span>
+<span class="token comment"># 含义：一个阶段的所有作业必须在下一个阶段执行之前完成</span>
+<span class="token comment"># 默认的阶段有：.pre、build、test、deploy、.post 其中 .pre 和 .post 永远是在最开始和最后执行（其他的可以被自定义的顺序控制），而不管在这里定义的顺序是什么</span>
+<span class="token comment"># 可自定义阶段，按照你要让他们运行的顺序进行排序，同一阶段可以并行运行（前提是配置了并行数量）</span>
+<span class="token comment">## 这里自定义了执行顺序</span>
+<span class="token key atrule">stages</span><span class="token punctuation">:</span>
+  <span class="token punctuation">-</span> build
+  <span class="token punctuation">-</span> test
+  <span class="token punctuation">-</span> dockerBuild  <span class="token comment"># 新增了一个自定义的 dockerBuild 阶段</span>
+  <span class="token punctuation">-</span> deploy
+
+
+<span class="token comment">## 定义作业名称</span>
+<span class="token key atrule">build-bootJar</span><span class="token punctuation">:</span>
+  <span class="token comment"># 定义阶段，用于执行顺序的控制</span>
+  <span class="token key atrule">stage</span><span class="token punctuation">:</span> build
+  <span class="token comment"># 使用镜像运行，选择有 gradle 的镜像</span>
+  <span class="token key atrule">image</span><span class="token punctuation">:</span> bj<span class="token punctuation">-</span>docker.xxx.com/gradle<span class="token punctuation">:</span>6.7.1<span class="token punctuation">-</span>jdk8
+  <span class="token comment"># 定义执行脚本</span>
+  <span class="token key atrule">script</span><span class="token punctuation">:</span>
+    <span class="token comment"># /builds/data/project-citest/.gradle</span>
+    <span class="token punctuation">-</span> echo &quot;exec bootJar<span class="token punctuation">,</span> gradle：`pwd`/.gradle&quot;
+    <span class="token punctuation">-</span> export GRADLE_USER_HOME=`pwd`/.gradle
+    <span class="token comment"># 执行 gradle 的时候打印 info 日志信息，可以看到下载依赖的请求</span>
+    <span class="token punctuation">-</span> gradle bootJar <span class="token punctuation">-</span><span class="token punctuation">-</span>info
+    <span class="token punctuation">-</span> ls <span class="token punctuation">-</span>l $GRADLE_USER_HOME;
+    <span class="token punctuation">-</span> ls <span class="token punctuation">-</span>l build/libs/
+</code></pre> <div class="line-numbers-wrapper"><span class="line-number">1</span><br><span class="line-number">2</span><br><span class="line-number">3</span><br><span class="line-number">4</span><br><span class="line-number">5</span><br><span class="line-number">6</span><br><span class="line-number">7</span><br><span class="line-number">8</span><br><span class="line-number">9</span><br><span class="line-number">10</span><br><span class="line-number">11</span><br><span class="line-number">12</span><br><span class="line-number">13</span><br><span class="line-number">14</span><br><span class="line-number">15</span><br><span class="line-number">16</span><br><span class="line-number">17</span><br><span class="line-number">18</span><br><span class="line-number">19</span><br><span class="line-number">20</span><br><span class="line-number">21</span><br><span class="line-number">22</span><br><span class="line-number">23</span><br><span class="line-number">24</span><br><span class="line-number">25</span><br><span class="line-number">26</span><br><span class="line-number">27</span><br><span class="line-number">28</span><br><span class="line-number">29</span><br><span class="line-number">30</span><br><span class="line-number">31</span><br><span class="line-number">32</span><br><span class="line-number">33</span><br></div></div><p>这样就定义了一个执行 gradle 执行 bootJar 生成 boot jar 包的作业。</p> <p>这里在执行的时候，你会发现每次构建都很耗时（通过 <code>gradle bootJar --info</code> ），通过 <code>--info</code> 看到控制台上输出的日志信息，大部分耗时都在重新下载 jar 包依赖了，我们考虑使用缓存来缓存这些内容</p> <h2 id="缓存-gradle-的-jar-包依赖"><a href="#缓存-gradle-的-jar-包依赖" class="header-anchor">#</a> 缓存 gradle 的 jar 包依赖</h2> <p>给作业增加了 cache 配置，有关变量使用相关的请看本章中的变量章节</p> <div class="language-yml line-numbers-mode"><pre class="language-yml"><code><span class="token comment">## 定义作业名称</span>
+<span class="token key atrule">build-bootJar</span><span class="token punctuation">:</span>
+  <span class="token comment"># 定义阶段，用于执行顺序的控制</span>
+  <span class="token key atrule">stage</span><span class="token punctuation">:</span> build
+  <span class="token comment"># 使用镜像运行，选择有 gradle 的镜像</span>
+  <span class="token key atrule">image</span><span class="token punctuation">:</span> bj<span class="token punctuation">-</span>docker.runshopstore.com/gradle<span class="token punctuation">:</span>6.7.1<span class="token punctuation">-</span>jdk8
+  <span class="token comment"># 定义执行脚本</span>
+  <span class="token key atrule">script</span><span class="token punctuation">:</span>
+    <span class="token comment"># /builds/data/project-citest/.gradle</span>
+    <span class="token punctuation">-</span> echo &quot;exec bootJar<span class="token punctuation">,</span> gradle：`pwd`/.gradle&quot;
+    <span class="token punctuation">-</span> export GRADLE_USER_HOME=`pwd`/.gradle
+    <span class="token comment"># 执行 gradle 的时候打印 info 日志信息，可以看到下载依赖的请求</span>
+    <span class="token punctuation">-</span> gradle bootJar <span class="token punctuation">-</span><span class="token punctuation">-</span>info
+    <span class="token punctuation">-</span> ls <span class="token punctuation">-</span>l $GRADLE_USER_HOME;
+    <span class="token punctuation">-</span> ls <span class="token punctuation">-</span>l build/libs/
+  <span class="token comment">### 缓存</span>
+  <span class="token comment"># 缓存依赖原理和最佳实践：https://docs.gitlab.com/ee/ci/yaml/README.html#cache</span>
+  <span class="token comment"># 缓存语法：https://docs.gitlab.com/ee/ci/yaml/README.html#cache</span>
+  <span class="token key atrule">cache</span><span class="token punctuation">:</span>
+    <span class="token comment"># 使用预定义变量，项目名称 作为缓存的 key，目的是为了该项目的所有分支都使用该缓存</span>
+    <span class="token comment">## 所有预定义变量</span>
+    <span class="token comment"># 官方文档：https://docs.gitlab.com/ee/ci/variables/predefined_variables.html</span>
+    <span class="token comment"># 官方支持的变量，可以直接使用，而不用定义的变量</span>
+    <span class="token key atrule">key</span><span class="token punctuation">:</span> <span class="token string">&quot;$CI_PROJECT_NAME&quot;</span>
+    <span class="token comment"># 要缓存的内容有哪些？</span>
+    <span class="token comment"># 在上面定义了  GRADLE_USER_HOME ，那么 gradle 的相关工作目录则就在该目录下，使用了 pwd，则是当前的项目目录下，所以这里使用相对路径就能获取到</span>
+    <span class="token key atrule">paths</span><span class="token punctuation">:</span>
+      <span class="token comment"># image 使用的是 gradle:6.7.1-jdk8，意思是该镜像已经安装了 gradle 6.7.1，</span>
+      <span class="token comment"># 如果要使用项目相同的 wrapper 里面的版本，则需要缓存该目录，不用每次都下载 gradle 了，但是所有使用 gradle 的地方需要改成 gradlew</span>
+      <span class="token punctuation">-</span> .gradle/wrapper
+      <span class="token comment"># gradle 的 jar 包依赖全部下载到这个地方</span>
+      <span class="token punctuation">-</span> .gradle/caches
+    <span class="token comment">## 缓存策略</span>
+    <span class="token comment"># 默认是 pull-push，执行作业前，先下载缓存文件到指定目录，作业完成后，再上传</span>
+    <span class="token key atrule">policy</span><span class="token punctuation">:</span> pull<span class="token punctuation">-</span>push
+</code></pre> <div class="line-numbers-wrapper"><span class="line-number">1</span><br><span class="line-number">2</span><br><span class="line-number">3</span><br><span class="line-number">4</span><br><span class="line-number">5</span><br><span class="line-number">6</span><br><span class="line-number">7</span><br><span class="line-number">8</span><br><span class="line-number">9</span><br><span class="line-number">10</span><br><span class="line-number">11</span><br><span class="line-number">12</span><br><span class="line-number">13</span><br><span class="line-number">14</span><br><span class="line-number">15</span><br><span class="line-number">16</span><br><span class="line-number">17</span><br><span class="line-number">18</span><br><span class="line-number">19</span><br><span class="line-number">20</span><br><span class="line-number">21</span><br><span class="line-number">22</span><br><span class="line-number">23</span><br><span class="line-number">24</span><br><span class="line-number">25</span><br><span class="line-number">26</span><br><span class="line-number">27</span><br><span class="line-number">28</span><br><span class="line-number">29</span><br><span class="line-number">30</span><br><span class="line-number">31</span><br><span class="line-number">32</span><br><span class="line-number">33</span><br><span class="line-number">34</span><br><span class="line-number">35</span><br></div></div><p>查看缓存是否成功，可以看 ci 控制台输出的内容</p> <div class="language-bash line-numbers-mode"><pre class="language-bash"><code><span class="token punctuation">..</span>.
+<span class="token comment"># 在作业执行前显示了一条 Restoring cache</span>
+<span class="token comment"># 这个就是在还原缓存，没有其他信息，因为我们是第一次执行</span>
+Restoring cache
+<span class="token punctuation">..</span><span class="token punctuation">..</span>
+<span class="token comment"># 这里是上面 script 中执行的内容，目的是为了看看 gradle 工作目录下有哪些文件</span>
+$ <span class="token function">ls</span> -l <span class="token variable">$GRADLE_USER_HOME</span><span class="token punctuation">;</span>
+total <span class="token number">40</span>
+drwxr-xr-x <span class="token number">7</span> root root <span class="token number">4096</span> Mar  <span class="token number">8</span> 06:35 <span class="token number">6.7</span>.1
+drwxr-xr-x <span class="token number">2</span> root root <span class="token number">4096</span> Mar  <span class="token number">8</span> 06:34 buildOutputCleanup
+drwxr-xr-x <span class="token number">7</span> root root <span class="token number">4096</span> Mar  <span class="token number">8</span> 06:29 caches		<span class="token comment"># 这个是 jar 包依赖文件目录</span>
+drwxr-xr-x <span class="token number">2</span> root root <span class="token number">4096</span> Mar  <span class="token number">8</span> 06:30 checksums
+drwxr-xr-x <span class="token number">2</span> root root <span class="token number">4096</span> Mar  <span class="token number">8</span> 06:35 configuration-cache
+drwxr-xr-x <span class="token number">3</span> root root <span class="token number">4096</span> Mar  <span class="token number">8</span> 06:29 daemon
+drwxr-xr-x <span class="token number">2</span> root root <span class="token number">4096</span> Mar  <span class="token number">8</span> 06:34 jdks
+drwxr-xr-x <span class="token number">5</span> root root <span class="token number">4096</span> Mar  <span class="token number">8</span> 06:29 native
+drwxr-xr-x <span class="token number">3</span> root root <span class="token number">4096</span> Mar  <span class="token number">8</span> 06:29 notifications
+drwxr-xr-x <span class="token number">2</span> root root <span class="token number">4096</span> Mar  <span class="token number">8</span> 06:35 vcs-1
+
+<span class="token comment"># bootJar 也出来了</span>
+$ <span class="token function">ls</span> -l build/libs/
+total <span class="token number">16648</span>
+-rw-r--r-- <span class="token number">1</span> root root <span class="token number">17047394</span> Mar  <span class="token number">8</span> 06:35 citest-0.0.1-SNAPSHOT.jar
+Saving cache <span class="token keyword">for</span> successful job
+00:02
+
+<span class="token comment"># 下面是开始创建缓存了</span>
+Creating cache project-citest<span class="token punctuation">..</span>.
+<span class="token comment"># .gradle/wrapper 没有匹配到文件，这个是我们没有使用 gradlew 命令，是正常的</span>
+WARNING: .gradle/wrapper: no matching files    
+<span class="token comment"># 这里找到了 1086 个文件或则目录，说明缓存生效了</span>
+.gradle/caches: found <span class="token number">1086</span> matching files and directories 
+<span class="token comment"># 没有提供 URL，缓存将不会上传到共享缓存服务器。缓存将只存储在本地。</span>
+No URL provided, cache will be not uploaded to shared cache server. Cache will be stored only locally. 
+Created cache
+Cleaning up <span class="token function">file</span> based variables
+00:01
+Job succeeded
+</code></pre> <div class="line-numbers-wrapper"><span class="line-number">1</span><br><span class="line-number">2</span><br><span class="line-number">3</span><br><span class="line-number">4</span><br><span class="line-number">5</span><br><span class="line-number">6</span><br><span class="line-number">7</span><br><span class="line-number">8</span><br><span class="line-number">9</span><br><span class="line-number">10</span><br><span class="line-number">11</span><br><span class="line-number">12</span><br><span class="line-number">13</span><br><span class="line-number">14</span><br><span class="line-number">15</span><br><span class="line-number">16</span><br><span class="line-number">17</span><br><span class="line-number">18</span><br><span class="line-number">19</span><br><span class="line-number">20</span><br><span class="line-number">21</span><br><span class="line-number">22</span><br><span class="line-number">23</span><br><span class="line-number">24</span><br><span class="line-number">25</span><br><span class="line-number">26</span><br><span class="line-number">27</span><br><span class="line-number">28</span><br><span class="line-number">29</span><br><span class="line-number">30</span><br><span class="line-number">31</span><br><span class="line-number">32</span><br><span class="line-number">33</span><br><span class="line-number">34</span><br><span class="line-number">35</span><br><span class="line-number">36</span><br><span class="line-number">37</span><br><span class="line-number">38</span><br></div></div><p>下面再次修改文件，上传后，查看缓存 Restoring cache 步骤的输出信息是什么</p> <div class="language-bash line-numbers-mode"><pre class="language-bash"><code><span class="token punctuation">..</span>.
+Restoring cache
+Checking cache <span class="token keyword">for</span> project-citest<span class="token punctuation">..</span>.
+<span class="token comment"># 没有提供网址，缓存将不会从共享缓存服务器下载。相反，将提取缓存的本地版本。</span>
+No URL provided, cache will not be downloaded from shared cache server. Instead a <span class="token builtin class-name">local</span> version of cache will be extracted. 
+<span class="token comment"># 成功提取缓存</span>
+Successfully extracted cache
+<span class="token punctuation">..</span>.
+<span class="token punctuation">..</span><span class="token punctuation">..</span>
+Saving cache <span class="token keyword">for</span> successful job
+00:02
+Creating cache project-citest<span class="token punctuation">..</span>.
+WARNING: .gradle/wrapper: no matching files        
+.gradle/caches: found <span class="token number">1086</span> matching files and directories 
+No URL provided, cache will be not uploaded to shared cache server. Cache will be stored only locally. 
+Created cache
+Cleaning up <span class="token function">file</span> based variables
+00:01
+Job succeeded
+</code></pre> <div class="line-numbers-wrapper"><span class="line-number">1</span><br><span class="line-number">2</span><br><span class="line-number">3</span><br><span class="line-number">4</span><br><span class="line-number">5</span><br><span class="line-number">6</span><br><span class="line-number">7</span><br><span class="line-number">8</span><br><span class="line-number">9</span><br><span class="line-number">10</span><br><span class="line-number">11</span><br><span class="line-number">12</span><br><span class="line-number">13</span><br><span class="line-number">14</span><br><span class="line-number">15</span><br><span class="line-number">16</span><br><span class="line-number">17</span><br><span class="line-number">18</span><br><span class="line-number">19</span><br></div></div><p>可以看到缓存已经生效了，它将缓存保存到了本地（应该是 GitLab Runner 机器上，我们这里实验的 GitLab Runner 是单机版的 docker）</p> <p>下面在另外一个任务中尝试获取我们打好的 bootJar 包</p> <div class="language-yml line-numbers-mode"><pre class="language-yml"><code><span class="token comment"># 将 jar 包打成 image</span>
+<span class="token key atrule">dockerBuild</span><span class="token punctuation">:</span>
+  <span class="token key atrule">stage</span><span class="token punctuation">:</span> dockerBuild
+  <span class="token key atrule">script</span><span class="token punctuation">:</span>
+    <span class="token punctuation">-</span> ls <span class="token punctuation">-</span>l build/libs/
+</code></pre> <div class="line-numbers-wrapper"><span class="line-number">1</span><br><span class="line-number">2</span><br><span class="line-number">3</span><br><span class="line-number">4</span><br><span class="line-number">5</span><br></div></div><p>如果不使用  image ，则 gitlab 会默认使用 ruby:2.6 这个 image 来执行我们的 script，那么上述结果如下</p> <div class="language- line-numbers-mode"><pre class="language-text"><code>$ ls -l build/libs/
+ls: cannot access 'build/libs/': No such file or directory
+</code></pre> <div class="line-numbers-wrapper"><span class="line-number">1</span><br><span class="line-number">2</span><br></div></div><p>这个肯定是找不到的。在官网文档中就解释了 <a href="https://docs.gitlab.com/ee/ci/caching/#cache-vs-artifacts" target="_blank" rel="noopener noreferrer">缓存与工件<span><svg xmlns="http://www.w3.org/2000/svg" aria-hidden="true" focusable="false" x="0px" y="0px" viewBox="0 0 100 100" width="15" height="15" class="icon outbound"><path fill="currentColor" d="M18.8,85.1h56l0,0c2.2,0,4-1.8,4-4v-32h-8v28h-48v-48h28v-8h-32l0,0c-2.2,0-4,1.8-4,4v56C14.8,83.3,16.6,85.1,18.8,85.1z"></path> <polygon fill="currentColor" points="45.7,48.7 51.3,54.3 77.2,28.5 77.2,37.2 85.2,37.2 85.2,14.9 62.8,14.9 62.8,22.9 71.5,22.9"></polygon></svg> <span class="sr-only">(opens new window)</span></span></a>，artifacts （工件）用于阶段之间传递阶段的结果</p> <h2 id="配置-artifacts"><a href="#配置-artifacts" class="header-anchor">#</a> 配置 artifacts</h2> <div class="language-yml line-numbers-mode"><pre class="language-yml"><code> <span class="token key atrule">build-bootJar</span><span class="token punctuation">:</span>
+  <span class="token punctuation">...</span>
+  <span class="token key atrule">artifacts</span><span class="token punctuation">:</span>
+    <span class="token key atrule">paths</span><span class="token punctuation">:</span>
+      <span class="token punctuation">-</span> build/libs/<span class="token important">*.jar</span>
+    <span class="token key atrule">expire_in</span><span class="token punctuation">:</span> 1 days
+</code></pre> <div class="line-numbers-wrapper"><span class="line-number">1</span><br><span class="line-number">2</span><br><span class="line-number">3</span><br><span class="line-number">4</span><br><span class="line-number">5</span><br><span class="line-number">6</span><br></div></div><p>控制台输出</p> <div class="language-bash line-numbers-mode"><pre class="language-bash"><code>Uploading artifacts <span class="token keyword">for</span> successful job
+00:02
+Uploading artifacts<span class="token punctuation">..</span>.
+build/libs/*.jar: found <span class="token number">1</span> matching files and directories 
+Uploading artifacts as <span class="token string">&quot;archive&quot;</span> to coordinator<span class="token punctuation">..</span>. ok  <span class="token assign-left variable">id</span><span class="token operator">=</span><span class="token number">42690</span> <span class="token assign-left variable">responseStatus</span><span class="token operator">=</span><span class="token number">201</span> Created <span class="token assign-left variable">token</span><span class="token operator">=</span>15iuajwR
+</code></pre> <div class="line-numbers-wrapper"><span class="line-number">1</span><br><span class="line-number">2</span><br><span class="line-number">3</span><br><span class="line-number">4</span><br><span class="line-number">5</span><br></div></div><p>那么在 dockerBuild 流程中的输出关键信息如下</p> <div class="language-bash line-numbers-mode"><pre class="language-bash"><code>Downloading artifacts
+00:01
+Downloading artifacts <span class="token keyword">for</span> build-bootJar <span class="token punctuation">(</span><span class="token number">42690</span><span class="token punctuation">)</span><span class="token punctuation">..</span>.
+Downloading artifacts from coordinator<span class="token punctuation">..</span>. ok        <span class="token assign-left variable">id</span><span class="token operator">=</span><span class="token number">42690</span> <span class="token assign-left variable">responseStatus</span><span class="token operator">=</span><span class="token number">200</span> OK <span class="token assign-left variable">token</span><span class="token operator">=</span>15iuajwR
+Executing <span class="token string">&quot;step_script&quot;</span> stage of the job script
+00:01
+$ <span class="token function">ls</span> -l build/libs/
+total <span class="token number">16648</span>
+-rw-r--r-- <span class="token number">1</span> root root <span class="token number">17047394</span> Mar  <span class="token number">8</span> 07:20 citest-0.0.1-SNAPSHOT.jar
+</code></pre> <div class="line-numbers-wrapper"><span class="line-number">1</span><br><span class="line-number">2</span><br><span class="line-number">3</span><br><span class="line-number">4</span><br><span class="line-number">5</span><br><span class="line-number">6</span><br><span class="line-number">7</span><br><span class="line-number">8</span><br><span class="line-number">9</span><br></div></div><h2 id="使用-docker-打成-image"><a href="#使用-docker-打成-image" class="header-anchor">#</a> 使用 docker 打成 image</h2> <p>实现思路</p> <ol><li><p>使用有 docker 功能的 image</p></li> <li><p>使用命令登录到私有  docker：</p> <div class="language-bash line-numbers-mode"><pre class="language-bash"><code><span class="token builtin class-name">echo</span> <span class="token string">&quot;密码&quot;</span> <span class="token operator">|</span> docker login -u <span class="token string">&quot;用户名&quot;</span> --password-stdin <span class="token string">&quot;私有 docker 仓地址 &quot;</span>
+</code></pre> <div class="line-numbers-wrapper"><span class="line-number">1</span><br></div></div></li> <li><p>完成 docker build 和 push 操作</p></li></ol> <p>在此之前，需要准备一个 Dockerfile 文件，从上面的测试学习中可知，我们操作的目录是在项目目录下，这个从控制台的日志输出中能看到</p> <div class="language-bash line-numbers-mode"><pre class="language-bash"><code><span class="token punctuation">..</span>.
+Getting <span class="token builtin class-name">source</span> from Git repository
+00:01
+Fetching changes with <span class="token function">git</span> depth <span class="token builtin class-name">set</span> to <span class="token number">50</span><span class="token punctuation">..</span>.
+<span class="token comment"># 重新调整这个仓库</span>
+Reinitialized existing Git repository <span class="token keyword">in</span> /builds/data/project-citest/.git/
+<span class="token comment"># checkout</span>
+Checking out 6de1661f as main<span class="token punctuation">..</span>.
+</code></pre> <div class="line-numbers-wrapper"><span class="line-number">1</span><br><span class="line-number">2</span><br><span class="line-number">3</span><br><span class="line-number">4</span><br><span class="line-number">5</span><br><span class="line-number">6</span><br><span class="line-number">7</span><br><span class="line-number">8</span><br></div></div><p>那么我们的思路就是，在我们的项目中编写一份 Dockerfile 文件，然后在这个作业中，执行这个文件打包镜像</p> <p>具体代码如下</p> <p>Dockerfile</p> <div class="language-bash line-numbers-mode"><pre class="language-bash"><code>FROM xxx/openjdk:8u212-jre-slim
+
+<span class="token comment"># 定义工作目录</span>
+WORKDIR /app
+
+<span class="token comment"># 复制 build/libs/*.jar 并重命名为 app.jar</span>
+<span class="token comment"># 这里写的 *.jar 事实上，我们知道只会产生一个 jar 包</span>
+<span class="token comment"># 这里的路径，是作业中下载的工件路径</span>
+COPY build/libs/*.jar app.jar
+
+EXPOSE <span class="token number">80</span>
+
+ENTRYPOINT  <span class="token punctuation">[</span><span class="token string">&quot;java&quot;</span>, <span class="token string">&quot;-jar&quot;</span>, <span class="token string">&quot;app.jar&quot;</span><span class="token punctuation">]</span>
+</code></pre> <div class="line-numbers-wrapper"><span class="line-number">1</span><br><span class="line-number">2</span><br><span class="line-number">3</span><br><span class="line-number">4</span><br><span class="line-number">5</span><br><span class="line-number">6</span><br><span class="line-number">7</span><br><span class="line-number">8</span><br><span class="line-number">9</span><br><span class="line-number">10</span><br><span class="line-number">11</span><br><span class="line-number">12</span><br><span class="line-number">13</span><br></div></div><p>作业定义如下</p> <div class="language-yml line-numbers-mode"><pre class="language-yml"><code><span class="token comment">### 将 jar 包打成 image</span>
+<span class="token comment">## 实现思路</span>
+<span class="token comment">#  1. 使用有 docker 功能的 image</span>
+<span class="token comment">#  2. 使用命令登录到私有 docker： echo &quot;密码&quot; | docker login -u &quot;用户名&quot; --password-stdin &quot;私有 docker 仓地址 &quot;</span>
+<span class="token comment">#  3. 完成 docker 操作</span>
+<span class="token key atrule">dockerBuild</span><span class="token punctuation">:</span>
+  <span class="token key atrule">image</span><span class="token punctuation">:</span> xxx/docker<span class="token punctuation">:</span>stable
+  <span class="token key atrule">stage</span><span class="token punctuation">:</span> dockerBuild
+  <span class="token key atrule">script</span><span class="token punctuation">:</span>
+    <span class="token punctuation">-</span> ls <span class="token punctuation">-</span>l build/libs/
+    <span class="token comment"># 这里使用了自定义的环境变量</span>
+    <span class="token comment"># 这个变量配置入口在项目的 -/settings/ci_cd，设置 -&gt; CI/CD 页面中的 变量 中</span>
+    <span class="token comment"># 分为项目独有变量 和 群组变量（该群组下的项目可以直接使用）</span>
+    <span class="token punctuation">-</span> echo &quot;$xx_BUILD_REGISTRY_PASSWORD&quot; <span class="token punctuation">|</span> docker login <span class="token punctuation">-</span>u &quot;$xx_BUILD_REGISTRY_USER&quot; <span class="token punctuation">-</span><span class="token punctuation">-</span>password<span class="token punctuation">-</span>stdin &quot;$xx_BUILD_REGISTRY&quot;
+    <span class="token punctuation">-</span> image_version=&quot;1.0&quot;
+    <span class="token punctuation">-</span> image_name=&quot;$<span class="token punctuation">{</span>xx_BUILD_REGISTRY<span class="token punctuation">}</span>/project<span class="token punctuation">-</span>test/citest&quot;
+    <span class="token punctuation">-</span> echo $image_name
+    <span class="token comment"># -f 指定 Dockerfile 路径</span>
+    <span class="token comment"># 一条语句写不下，还可以换行写，注意下这个语法</span>
+    <span class="token punctuation">-</span> docker build <span class="token punctuation">-</span>f ./Dockerfile
+      <span class="token punctuation">-</span><span class="token punctuation">-</span>tag &quot;$image_name<span class="token punctuation">:</span>$image_version&quot;
+      .
+    <span class="token punctuation">-</span> docker push &quot;$image_name<span class="token punctuation">:</span>$image_version&quot;
+  <span class="token comment">### needs 用于无序执行作业，可以将作业之间的关系可视化为有向无环图</span>
+  <span class="token comment"># 官方文档：https://docs.gitlab.com/ee/ci/yaml/README.html#needs</span>
+  <span class="token comment"># needs:[] 定义，但是不定义依赖的作业，表示 立即执行，需要注意的是它忽略了 stages 定义的执行顺序，类似于可以和其他作业并行执行，这里是立即执行</span>
+  <span class="token comment"># needs:[xxx] 必须要等待 xxx 作业完成，才能执行该作业</span>
+  <span class="token key atrule">needs</span><span class="token punctuation">:</span>
+    <span class="token punctuation">-</span> <span class="token key atrule">job</span><span class="token punctuation">:</span> build<span class="token punctuation">-</span>bootJar
+      <span class="token comment">#依赖 build-bootJar，并且需要下载它产生的工件，也就是之前打出来的 xx.jar</span>
+      <span class="token key atrule">artifacts</span><span class="token punctuation">:</span> <span class="token boolean important">true</span>
+  <span class="token comment">### rules 用于在管道中包括或排除作业，简单说就是符合条件的才会执行该作业</span>
+  <span class="token comment"># 官方文档：https://docs.gitlab.com/ee/ci/yaml/README.html#rules</span>
+  <span class="token comment"># 它可以写多个规则（条件），规则将按顺序进行评估，直到第一个匹配为止</span>
+  <span class="token key atrule">rules</span><span class="token punctuation">:</span>
+    <span class="token comment"># 这里判定触发 CI 的分支是 main 才执行该作业</span>
+    <span class="token punctuation">-</span> <span class="token key atrule">if</span><span class="token punctuation">:</span> <span class="token string">&quot;$CI_COMMIT_REF_NAME  == 'main'&quot;</span>
+      <span class="token key atrule">when</span><span class="token punctuation">:</span> on_success
+</code></pre> <div class="line-numbers-wrapper"><span class="line-number">1</span><br><span class="line-number">2</span><br><span class="line-number">3</span><br><span class="line-number">4</span><br><span class="line-number">5</span><br><span class="line-number">6</span><br><span class="line-number">7</span><br><span class="line-number">8</span><br><span class="line-number">9</span><br><span class="line-number">10</span><br><span class="line-number">11</span><br><span class="line-number">12</span><br><span class="line-number">13</span><br><span class="line-number">14</span><br><span class="line-number">15</span><br><span class="line-number">16</span><br><span class="line-number">17</span><br><span class="line-number">18</span><br><span class="line-number">19</span><br><span class="line-number">20</span><br><span class="line-number">21</span><br><span class="line-number">22</span><br><span class="line-number">23</span><br><span class="line-number">24</span><br><span class="line-number">25</span><br><span class="line-number">26</span><br><span class="line-number">27</span><br><span class="line-number">28</span><br><span class="line-number">29</span><br><span class="line-number">30</span><br><span class="line-number">31</span><br><span class="line-number">32</span><br><span class="line-number">33</span><br><span class="line-number">34</span><br><span class="line-number">35</span><br><span class="line-number">36</span><br><span class="line-number">37</span><br><span class="line-number">38</span><br></div></div><p>已经完成了目标，另外，在这基础上应该已经明白了核心的流程配置，后续可以个性化自己的配置。</p> <h2 id="一些关键文档配置路径"><a href="#一些关键文档配置路径" class="header-anchor">#</a> 一些关键文档配置路径</h2> <ul><li><a href="https://docs.gitlab.com/ee/ci/variables/README.html" target="_blank" rel="noopener noreferrer">变量<span><svg xmlns="http://www.w3.org/2000/svg" aria-hidden="true" focusable="false" x="0px" y="0px" viewBox="0 0 100 100" width="15" height="15" class="icon outbound"><path fill="currentColor" d="M18.8,85.1h56l0,0c2.2,0,4-1.8,4-4v-32h-8v28h-48v-48h28v-8h-32l0,0c-2.2,0-4,1.8-4,4v56C14.8,83.3,16.6,85.1,18.8,85.1z"></path> <polygon fill="currentColor" points="45.7,48.7 51.3,54.3 77.2,28.5 77.2,37.2 85.2,37.2 85.2,14.9 62.8,14.9 62.8,22.9 71.5,22.9"></polygon></svg> <span class="sr-only">(opens new window)</span></span></a> ：和 linux 中的变量一致，可以直接引用，如 $CI_JOB_STAGE</li> <li><a href="https://docs.gitlab.com/ee/ci/variables/predefined_variables.html" target="_blank" rel="noopener noreferrer">所有预定义的变量<span><svg xmlns="http://www.w3.org/2000/svg" aria-hidden="true" focusable="false" x="0px" y="0px" viewBox="0 0 100 100" width="15" height="15" class="icon outbound"><path fill="currentColor" d="M18.8,85.1h56l0,0c2.2,0,4-1.8,4-4v-32h-8v28h-48v-48h28v-8h-32l0,0c-2.2,0-4,1.8-4,4v56C14.8,83.3,16.6,85.1,18.8,85.1z"></path> <polygon fill="currentColor" points="45.7,48.7 51.3,54.3 77.2,28.5 77.2,37.2 85.2,37.2 85.2,14.9 62.8,14.9 62.8,22.9 71.5,22.9"></polygon></svg> <span class="sr-only">(opens new window)</span></span></a> 官方支持的变量，可以直接使用，而不用定义的变量</li> <li><a href="https://docs.gitlab.com/ee/ci/yaml/README.html#anchors" target="_blank" rel="noopener noreferrer">锚点<span><svg xmlns="http://www.w3.org/2000/svg" aria-hidden="true" focusable="false" x="0px" y="0px" viewBox="0 0 100 100" width="15" height="15" class="icon outbound"><path fill="currentColor" d="M18.8,85.1h56l0,0c2.2,0,4-1.8,4-4v-32h-8v28h-48v-48h28v-8h-32l0,0c-2.2,0-4,1.8-4,4v56C14.8,83.3,16.6,85.1,18.8,85.1z"></path> <polygon fill="currentColor" points="45.7,48.7 51.3,54.3 77.2,28.5 77.2,37.2 85.2,37.2 85.2,14.9 62.8,14.9 62.8,22.9 71.5,22.9"></polygon></svg> <span class="sr-only">(opens new window)</span></span></a> yml 语法，可以用来定义一些公共配置的模板，在使用的地方引用即可</li> <li>CI/DI 替代锚点的语法 <a href="https://docs.gitlab.com/ee/ci/yaml/README.html#stage" target="_blank" rel="noopener noreferrer">extends<span><svg xmlns="http://www.w3.org/2000/svg" aria-hidden="true" focusable="false" x="0px" y="0px" viewBox="0 0 100 100" width="15" height="15" class="icon outbound"><path fill="currentColor" d="M18.8,85.1h56l0,0c2.2,0,4-1.8,4-4v-32h-8v28h-48v-48h28v-8h-32l0,0c-2.2,0-4,1.8-4,4v56C14.8,83.3,16.6,85.1,18.8,85.1z"></path> <polygon fill="currentColor" points="45.7,48.7 51.3,54.3 77.2,28.5 77.2,37.2 85.2,37.2 85.2,14.9 62.8,14.9 62.8,22.9 71.5,22.9"></polygon></svg> <span class="sr-only">(opens new window)</span></span></a></li> <li><a href="https://docs.gitlab.com/ee/ci/yaml/README.html#stage" target="_blank" rel="noopener noreferrer">阶段 / stages<span><svg xmlns="http://www.w3.org/2000/svg" aria-hidden="true" focusable="false" x="0px" y="0px" viewBox="0 0 100 100" width="15" height="15" class="icon outbound"><path fill="currentColor" d="M18.8,85.1h56l0,0c2.2,0,4-1.8,4-4v-32h-8v28h-48v-48h28v-8h-32l0,0c-2.2,0-4,1.8-4,4v56C14.8,83.3,16.6,85.1,18.8,85.1z"></path> <polygon fill="currentColor" points="45.7,48.7 51.3,54.3 77.2,28.5 77.2,37.2 85.2,37.2 85.2,14.9 62.8,14.9 62.8,22.9 71.5,22.9"></polygon></svg> <span class="sr-only">(opens new window)</span></span></a>：定义作业执行顺序</li> <li><a href="https://docs.gitlab.com/ee/ci/yaml/README.html#needs" target="_blank" rel="noopener noreferrer">needs<span><svg xmlns="http://www.w3.org/2000/svg" aria-hidden="true" focusable="false" x="0px" y="0px" viewBox="0 0 100 100" width="15" height="15" class="icon outbound"><path fill="currentColor" d="M18.8,85.1h56l0,0c2.2,0,4-1.8,4-4v-32h-8v28h-48v-48h28v-8h-32l0,0c-2.2,0-4,1.8-4,4v56C14.8,83.3,16.6,85.1,18.8,85.1z"></path> <polygon fill="currentColor" points="45.7,48.7 51.3,54.3 77.2,28.5 77.2,37.2 85.2,37.2 85.2,14.9 62.8,14.9 62.8,22.9 71.5,22.9"></polygon></svg> <span class="sr-only">(opens new window)</span></span></a>：用于无序执行作业，可以定义依赖某个作业完成后才执行</li> <li>缓存 / cache ：<a href="https://docs.gitlab.com/ee/ci/yaml/README.html#cache" target="_blank" rel="noopener noreferrer">缓存依赖原理和最佳实践<span><svg xmlns="http://www.w3.org/2000/svg" aria-hidden="true" focusable="false" x="0px" y="0px" viewBox="0 0 100 100" width="15" height="15" class="icon outbound"><path fill="currentColor" d="M18.8,85.1h56l0,0c2.2,0,4-1.8,4-4v-32h-8v28h-48v-48h28v-8h-32l0,0c-2.2,0-4,1.8-4,4v56C14.8,83.3,16.6,85.1,18.8,85.1z"></path> <polygon fill="currentColor" points="45.7,48.7 51.3,54.3 77.2,28.5 77.2,37.2 85.2,37.2 85.2,14.9 62.8,14.9 62.8,22.9 71.5,22.9"></polygon></svg> <span class="sr-only">(opens new window)</span></span></a>、<a href="https://docs.gitlab.com/ee/ci/yaml/README.html#cache" target="_blank" rel="noopener noreferrer">缓存语法<span><svg xmlns="http://www.w3.org/2000/svg" aria-hidden="true" focusable="false" x="0px" y="0px" viewBox="0 0 100 100" width="15" height="15" class="icon outbound"><path fill="currentColor" d="M18.8,85.1h56l0,0c2.2,0,4-1.8,4-4v-32h-8v28h-48v-48h28v-8h-32l0,0c-2.2,0-4,1.8-4,4v56C14.8,83.3,16.6,85.1,18.8,85.1z"></path> <polygon fill="currentColor" points="45.7,48.7 51.3,54.3 77.2,28.5 77.2,37.2 85.2,37.2 85.2,14.9 62.8,14.9 62.8,22.9 71.5,22.9"></polygon></svg> <span class="sr-only">(opens new window)</span></span></a></li> <li><a href="https://docs.gitlab.com/ee/ci/caching/#cache-vs-artifacts" target="_blank" rel="noopener noreferrer">缓存与工件/artifacts <span><svg xmlns="http://www.w3.org/2000/svg" aria-hidden="true" focusable="false" x="0px" y="0px" viewBox="0 0 100 100" width="15" height="15" class="icon outbound"><path fill="currentColor" d="M18.8,85.1h56l0,0c2.2,0,4-1.8,4-4v-32h-8v28h-48v-48h28v-8h-32l0,0c-2.2,0-4,1.8-4,4v56C14.8,83.3,16.6,85.1,18.8,85.1z"></path> <polygon fill="currentColor" points="45.7,48.7 51.3,54.3 77.2,28.5 77.2,37.2 85.2,37.2 85.2,14.9 62.8,14.9 62.8,22.9 71.5,22.9"></polygon></svg> <span class="sr-only">(opens new window)</span></span></a></li> <li><a href="https://docs.gitlab.com/ee/ci/yaml/README.html#rules" target="_blank" rel="noopener noreferrer">规则 / rules<span><svg xmlns="http://www.w3.org/2000/svg" aria-hidden="true" focusable="false" x="0px" y="0px" viewBox="0 0 100 100" width="15" height="15" class="icon outbound"><path fill="currentColor" d="M18.8,85.1h56l0,0c2.2,0,4-1.8,4-4v-32h-8v28h-48v-48h28v-8h-32l0,0c-2.2,0-4,1.8-4,4v56C14.8,83.3,16.6,85.1,18.8,85.1z"></path> <polygon fill="currentColor" points="45.7,48.7 51.3,54.3 77.2,28.5 77.2,37.2 85.2,37.2 85.2,14.9 62.8,14.9 62.8,22.9 71.5,22.9"></polygon></svg> <span class="sr-only">(opens new window)</span></span></a>：用于条件判定，在哪些条件下可以执行该作业</li> <li>其他的还是需要通读 <a href="https://docs.gitlab.com/ee/ci/yaml/README.html#job-keywords" target="_blank" rel="noopener noreferrer">.gitlab-ci.yml 参考文档<span><svg xmlns="http://www.w3.org/2000/svg" aria-hidden="true" focusable="false" x="0px" y="0px" viewBox="0 0 100 100" width="15" height="15" class="icon outbound"><path fill="currentColor" d="M18.8,85.1h56l0,0c2.2,0,4-1.8,4-4v-32h-8v28h-48v-48h28v-8h-32l0,0c-2.2,0-4,1.8-4,4v56C14.8,83.3,16.6,85.1,18.8,85.1z"></path> <polygon fill="currentColor" points="45.7,48.7 51.3,54.3 77.2,28.5 77.2,37.2 85.2,37.2 85.2,14.9 62.8,14.9 62.8,22.9 71.5,22.9"></polygon></svg> <span class="sr-only">(opens new window)</span></span></a></li></ul> <h2 id="生产级配置写法"><a href="#生产级配置写法" class="header-anchor">#</a> 生产级配置写法</h2> <h2 id="一些个性化作业"><a href="#一些个性化作业" class="header-anchor">#</a> 一些个性化作业</h2> <h2 id="版本号生成-semantic-release"><a href="#版本号生成-semantic-release" class="header-anchor">#</a> 版本号生成 semantic-release</h2> <p><a href="https://github.com/semantic-release/semantic-release" target="_blank" rel="noopener noreferrer">semantic-release<span><svg xmlns="http://www.w3.org/2000/svg" aria-hidden="true" focusable="false" x="0px" y="0px" viewBox="0 0 100 100" width="15" height="15" class="icon outbound"><path fill="currentColor" d="M18.8,85.1h56l0,0c2.2,0,4-1.8,4-4v-32h-8v28h-48v-48h28v-8h-32l0,0c-2.2,0-4,1.8-4,4v56C14.8,83.3,16.6,85.1,18.8,85.1z"></path> <polygon fill="currentColor" points="45.7,48.7 51.3,54.3 77.2,28.5 77.2,37.2 85.2,37.2 85.2,14.9 62.8,14.9 62.8,22.9 71.5,22.9"></polygon></svg> <span class="sr-only">(opens new window)</span></span></a>：可以用该工具生成版本号，有 docker 封装好的镜像，在该镜像上直接使用</p> <div class="language-yml line-numbers-mode"><pre class="language-yml"><code><span class="token key atrule">version</span><span class="token punctuation">:</span>
+  <span class="token key atrule">stage</span><span class="token punctuation">:</span> version
+  <span class="token key atrule">image</span><span class="token punctuation">:</span> xxx/semantic<span class="token punctuation">-</span>release<span class="token punctuation">:</span>17.1.1
+  <span class="token key atrule">script</span><span class="token punctuation">:</span>
+    <span class="token comment"># 只在这些分支上才执行 semantic-release 命令</span>
+    <span class="token punctuation">-</span> if <span class="token punctuation">[</span> $CI_COMMIT_REF_NAME == 'alpha' <span class="token punctuation">-</span>o $CI_COMMIT_REF_NAME  == 'master' <span class="token punctuation">]</span>;
+      then
+      semantic<span class="token punctuation">-</span>release;
+      fi
+    <span class="token punctuation">-</span> if <span class="token punctuation">[</span> <span class="token tag">!</span> <span class="token punctuation">-</span>f ./.version <span class="token punctuation">]</span>;
+      then
+      echo &quot;VERSION=$<span class="token punctuation">{</span>xxx_BUILD_VERSION<span class="token punctuation">:</span><span class="token punctuation">-</span>$(date +%Y%m%d%H%M%S)<span class="token punctuation">}</span>&quot;<span class="token punctuation">&gt;</span>.version;
+      fi
+    <span class="token punctuation">-</span> cat .version
+  <span class="token key atrule">artifacts</span><span class="token punctuation">:</span>
+    <span class="token key atrule">paths</span><span class="token punctuation">:</span>
+      <span class="token punctuation">-</span> .version
+    <span class="token key atrule">expire_in</span><span class="token punctuation">:</span> 1 days
+</code></pre> <div class="line-numbers-wrapper"><span class="line-number">1</span><br><span class="line-number">2</span><br><span class="line-number">3</span><br><span class="line-number">4</span><br><span class="line-number">5</span><br><span class="line-number">6</span><br><span class="line-number">7</span><br><span class="line-number">8</span><br><span class="line-number">9</span><br><span class="line-number">10</span><br><span class="line-number">11</span><br><span class="line-number">12</span><br><span class="line-number">13</span><br><span class="line-number">14</span><br><span class="line-number">15</span><br><span class="line-number">16</span><br><span class="line-number">17</span><br><span class="line-number">18</span><br></div></div><p>感觉这里写的版本号生成，并没有使用上 semantic-release 真正的功能，仅仅是自己写了一个日期作为版本号</p></div> <footer class="page-edit"><div class="edit-link"><a href="https://github.com/zq99299/note-combat/edit/main/docs/gitlab/cicd/README.md" target="_blank" rel="noopener noreferrer">帮助我们改善此页面！</a> <span><svg xmlns="http://www.w3.org/2000/svg" aria-hidden="true" focusable="false" x="0px" y="0px" viewBox="0 0 100 100" width="15" height="15" class="icon outbound"><path fill="currentColor" d="M18.8,85.1h56l0,0c2.2,0,4-1.8,4-4v-32h-8v28h-48v-48h28v-8h-32l0,0c-2.2,0-4,1.8-4,4v56C14.8,83.3,16.6,85.1,18.8,85.1z"></path> <polygon fill="currentColor" points="45.7,48.7 51.3,54.3 77.2,28.5 77.2,37.2 85.2,37.2 85.2,14.9 62.8,14.9 62.8,22.9 71.5,22.9"></polygon></svg> <span class="sr-only">(opens new window)</span></span></div> <div class="last-updated"><span class="prefix">上次更新:</span> <span class="time">2021-03-08 10:06:19</span></div></footer> <div class="page-nav"><p class="inner"><span class="prev">
+      ←
+      <a href="/note-combat/gitlab/" class="prev router-link-active">
+        GitLab
+      </a></span> <!----></p></div> </main></div><div class="global-ui"><!----><!----></div></div>
+    <script src="/note-combat/assets/js/app.c5111373.js" defer></script><script src="/note-combat/assets/js/2.8f2b6977.js" defer></script><script src="/note-combat/assets/js/11.b4a77ff2.js" defer></script><script src="/note-combat/assets/js/3.9baef331.js" defer></script>
+  </body>
+</html>
