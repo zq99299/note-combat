@@ -1,5 +1,6 @@
 const springSc = require('../spring')
 const dockerSc = require('../docker')
+const gitlabSc = require('../gitlab')
 
 module.exports = {
   // ~ 开发配置
@@ -42,11 +43,13 @@ module.exports = {
     },
     nav: [
       { text: 'Spring', link: '/spring/' },
-      { text: 'Docker', link: '/docker/' }
+      { text: 'Docker', link: '/docker/' },
+      { text: 'GitLab', link: '/gitlab/' }
     ],
     sidebar: {
       '/spring/': springSc(),
-      '/docker/': dockerSc()
+      '/docker/': dockerSc(),
+      '/gitlab/': gitlabSc()
     }
   },
   plugins: [
