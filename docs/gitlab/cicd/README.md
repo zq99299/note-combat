@@ -58,7 +58,7 @@ build-bootJar:
 
 ## 缓存 gradle 的 jar 包依赖
 
-给作业增加了 cache 配置，有关变量使用相关的请看本章中的变量章节
+给作业增加了 cache 配置
 
 ```yml
 ## 定义作业名称
