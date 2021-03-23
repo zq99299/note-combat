@@ -200,3 +200,32 @@ elasticsearch:
 
 
 
+## RabbitMQ 3 部署
+
+docker-compose.yml
+
+```yml
+services:
+    rabbitmq:
+        image: rabbitmq:3-management
+        container_name: rabbitmq
+        environment:
+          - hostname=localhost
+        volumes:
+          # 注意数据目录，不能写 /var/lib/rabbitmq/ ，否则启动后会导致 cookie 文件的权限问题启动失败
+          - ./rabbitmq/data:/var/lib/rabbitmq/mnesia
+          - ./rabbitmq/log:/var/log/rabbitmq
+          - ./rabbitmq.conf:/etc/rabbitmq/rabbitmq.conf 
+        ports:
+          - 15672:15672
+          - 5672:5672
+```
+
+rabbitmq.conf
+
+```
+loopback_users.guest = false
+listeners.tcp.default = 5672
+management.tcp.port = 15672
+```
+
